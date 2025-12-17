@@ -1,0 +1,1401 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/28/2025 12:00:47 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LNIA000PE06SFM2"
+  DTS:CreatorName="NIOCORP\NI346527"
+  DTS:DTSID="{400B8EA1-971C-4B92-A3CA-6C186FC17F3F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.2"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="35"
+  DTS:VersionGUID="{DF49D2DB-4DA0-489D-99D8-0902514489A0}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CONEXAO_BANCO]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{557165E4-FCA5-4F9D-AB80-94F4538469D0}"
+      DTS:ObjectName="CONEXAO_BANCO">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=10.139.16.244,1433;User ID=NI346527;Initial Catalog=bdcredito_gcp;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Package-{557165E4-FCA5-4F9D-AB80-94F4538469D0}10.139.16.244,1433.bdcredito_gcp.NI346527;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA4qhQRhOkfkmpYRdggBFnHwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAAOTfjSlHknz8nUSMxcM57AAAAAASAAACgAAAAEAAAAILSzEN+bb9mqaTWDwg1rrgYAAAAzzgPnBDwxNtGHcTzgMQELqUij8r9bLG6FAAAAPmfkqK8f+kwWmHYiUoy+fRCbHRX</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Gerenciador de Conexões de Arquivos Simples]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{332C6B34-892D-4B5C-AB87-8AE0CE18B193}"
+      DTS:ObjectName="Gerenciador de Conexões de Arquivos Simples">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1046"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\PROCESSOS\BASE_SEMANAL_INADIM\UPLOAD\TB_CRDT_BASE_INADIMPLENCIA_LEGADO_NF_ENTRADA.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DS_SISTEMA"
+              DTS:DTSID="{555FFF7F-AA75-4784-B200-FF3366545D65}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CHAVE"
+              DTS:DTSID="{143EC8AD-9862-44FA-AB79-3DC8A74CC961}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NR_FATURAS"
+              DTS:DTSID="{61E13896-B34B-4D53-BF27-149E61057A28}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DT_VENC_PARTICAO"
+              DTS:DTSID="{7C9C5D48-5BA9-426A-A8F7-8DD296EE8F9D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ATRASO"
+              DTS:DTSID="{035146CA-369A-43BA-8FA9-8EF6FE19EA51}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="VL_FATURADO"
+              DTS:DTSID="{9B63B392-3D3B-4C50-BFBF-1A90F39AD850}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\ALTERAR TIPO DE DADOS"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarefa Executar SQL"
+      DTS:DTSID="{65fc9871-2029-4691-84c8-0923ea635281}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ALTERAR TIPO DE DADOS"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{557165E4-FCA5-4F9D-AB80-94F4538469D0}"
+          SQLTask:SqlStatementSource="ALTER TABLE  TB_CRDT_BASE_INADIMPLENCIA_LEGADO_NF_ENTRADA ALTER COLUMN VL_FATURADO FLOAT;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\APAGAR DOCS NULOS"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarefa Executar SQL"
+      DTS:DTSID="{953b4d00-7669-49b0-8463-e95cc4e7e23e}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="APAGAR DOCS NULOS"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{557165E4-FCA5-4F9D-AB80-94F4538469D0}"
+          SQLTask:SqlStatementSource="DELETE FROM TB_CRDT_CLASSLIST_OI_EXPORT WHERE CD_LETRA IS NULL " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\ATUALIZAR CLASS CODE ANTIGO"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarefa Executar SQL"
+      DTS:DTSID="{c69868d4-10b7-4481-aaa1-95d78c6eb715}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ATUALIZAR CLASS CODE ANTIGO"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{557165E4-FCA5-4F9D-AB80-94F4538469D0}"
+          SQLTask:SqlStatementSource="-- ATUALIZAR O CLASS CODE DO ANTIGO D&#xA;UPDATE A&#xA;SET A.CD_LETRA = NULL,&#xA;A.CD_OPERACAO = NULL,&#xA;A.DT_INCLUSAO = NULL&#xA;FROM TB_CRDT_CLASSLIST_OI_EXPORT A&#xA;&#xA;WHERE CD_LETRA = 'D'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\ATUALIZAR MAILING D"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarefa Executar SQL"
+      DTS:DTSID="{905830b1-d29f-4c9c-ac13-08cdc026261b}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ATUALIZAR MAILING D"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{557165E4-FCA5-4F9D-AB80-94F4538469D0}"
+          SQLTask:SqlStatementSource="update a&#xA;&#xA;set a.cd_letra = 'D',&#xA;CD_OPERACAO = 'DEBITO_NIO',&#xA;DT_INCLUSAO = getdate()&#xA;from TB_CRDT_CLASSLIST_OI_EXPORT a &#xA;inner join&#xA;(&#xA;SELECT &#xA; CHAVE AS NUMERO_DOCUMENTO,&#xA; SUM(VL_FATURADO) AS TOTAL_DEBITO&#xA;FROM [dbo].[TB_CRDT_BASE_INADIMPLENCIA_LEGADO_NF]&#xA;&#xA;GROUP BY CHAVE&#xA;&#xA;) b&#xA;on nr_pessoa = numero_documento&#xA;&#xA;WHERE cd_letra NOT IN ('G','H','L')&#xA;&#xA;-----&#xA;&#xA;&#xA;update a&#xA;&#xA;set a.cd_letra = 'D',&#xA;CD_OPERACAO = 'DEBITO_NIO',&#xA;DT_INCLUSAO = getdate()&#xA;from TB_CRDT_CLASSLIST_OI_EXPORT a &#xA;inner join&#xA;(&#xA;SELECT &#xA; CHAVE AS NUMERO_DOCUMENTO,&#xA; SUM(VL_FATURADO) AS TOTAL_DEBITO&#xA;FROM [dbo].[TB_CRDT_BASE_INADIMPLENCIA_LEGADO_NF]&#xA;&#xA;GROUP BY CHAVE&#xA;&#xA;) b&#xA;on nr_pessoa = numero_documento&#xA;&#xA;WHERE cd_letra is null" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\ATUALIZAR MEI"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarefa Executar SQL"
+      DTS:DTSID="{a5ef8c08-0376-4514-9f6c-cd3243497c6a}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ATUALIZAR MEI"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{557165E4-FCA5-4F9D-AB80-94F4538469D0}"
+          SQLTask:SqlStatementSource="UPDATE A&#xA;&#xA;SET A.CD_LETRA = D.CD_LETRA,&#xA;A.CD_OPERACAO = 'MAILING_PJ',&#xA;A.DT_INCLUSAO = GETDATE()&#xA;&#xA;FROM TB_CRDT_CLASSLIST_OI_EXPORT A&#xA;&#xA;INNER JOIN &#xA;(&#xA;&#xA; SELECT NR_PESSOA,&#xA; SCORE,&#xA; CASE WHEN ID_SITUACAO_CADASTRAL &lt;&gt; 'A' THEN 'L'&#xA;  ELSE &#xA;  CASE WHEN SCORE IS NULL THEN 'Q'&#xA;  WHEN SCORE &lt; 320 THEN 'Q'&#xA;  WHEN SCORE BETWEEN  321 AND 749 THEN 'K'&#xA;  WHEN SCORE   &gt;= 750 THEN 'R'&#xA;  END &#xA; END AS CD_LETRA&#xA;&#xA;&#xA; FROM &#xA; (&#xA;  SELECT A.*,&#xA;  B.SCORE &#xA;&#xA;  FROM &#xA;  (&#xA;   select NR_PESSOA,&#xA;   ID_SITUACAO_CADASTRAL,&#xA;   RIGHT('00000000000000' + DOCUMENTO,14) AS DOCUMENTO&#xA;   from &#xA;   (&#xA;    SELECT  a.*,&#xA;    b.MEI,&#xA;    b.ID_SITUACAO_CADASTRAL,&#xA;    b.SCORE_PJ_CUSTOMIZADO,&#xA;    ID_NATUREZA_JURIDICA&#xA;    FROM TB_CRDT_CLASSLIST_OI_EXPORT a &#xA;    inner join TB_CRDT_BASE_QUOD_FULL_PJ b on a.NR_PESSOA = b.CNPJ&#xA;&#xA;    WHERE CD_LETRA IS NULL and TIPO_DOC = '2'&#xA;   ) a&#xA;   INNER JOIN TB_CRDT_QUOD_BASE_QUADRO_SOCIETARIO B ON a.NR_PESSOA = B.CNPJ&#xA; &#xA;   where MEI = 'S'&#xA;  ) A &#xA;  INNER JOIN TB_CRDT_BASE_QUOD_BASE_PF B ON A.DOCUMENTO = B.CPF_14&#xA; ) C&#xA;) D&#xA;&#xA;ON A.NR_PESSOA = D.NR_PESSOA" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\ATUALIZAR NAO MEI"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarefa Executar SQL"
+      DTS:DTSID="{b27bc395-c143-4f6e-bb40-6616c8387d30}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ATUALIZAR NAO MEI"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{557165E4-FCA5-4F9D-AB80-94F4538469D0}"
+          SQLTask:SqlStatementSource="UPDATE A&#xA;&#xA;SET A.CD_LETRA = B.CD_LETRA,&#xA;A.CD_OPERACAO = 'MAILING_PJ',&#xA;A.DT_INCLUSAO = GETDATE()&#xA;&#xA;FROM TB_CRDT_CLASSLIST_OI_EXPORT A&#xA;&#xA;INNER JOIN &#xA;(&#xA;&#xA; select NR_PESSOA,&#xA; case when ID_SITUACAO_CADASTRAL &lt;&gt; 'A' THEN 'L'&#xA; ELSE &#xA;  CASE WHEN SCORE_PJ_CUSTOMIZADO &lt; 700 THEN 'Q'&#xA;  ELSE&#xA;   CASE WHEN ID_NATUREZA_JURIDICA = '2135' THEN 'S'&#xA;    ELSE 'W' END &#xA;  END&#xA; END AS CD_LETRA&#xA;&#xA; from &#xA; (&#xA;  SELECT  a.*,&#xA;  b.MEI,&#xA;  b.ID_SITUACAO_CADASTRAL,&#xA;  b.SCORE_PJ_CUSTOMIZADO,&#xA;  ID_NATUREZA_JURIDICA&#xA;  FROM TB_CRDT_CLASSLIST_OI_EXPORT a &#xA;  inner join TB_CRDT_BASE_QUOD_FULL_PJ b on a.NR_PESSOA = b.CNPJ&#xA;&#xA;  WHERE CD_LETRA IS NULL and TIPO_DOC = '2'&#xA; ) a where MEI = 'n'&#xA;) B ON A.NR_PESSOA = B.NR_PESSOA" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\ATUALIZAR TIPO DOCUMENTO"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarefa Executar SQL"
+      DTS:DTSID="{475b9028-b925-43b0-8099-72bcc3a24d28}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ATUALIZAR TIPO DOCUMENTO"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{557165E4-FCA5-4F9D-AB80-94F4538469D0}"
+          SQLTask:SqlStatementSource=" ---- incluir tipo de documento&#xA;&#xA; UPDATE A &#xA;SET A.TIPO_DOC = 2&#xA;FROM tb_crdt_classlist_oi_export a with(tablock)  &#xA;INNER JOIN TB_CRDT_BASE_QUOD_FULL_PJ B ON A.NR_PESSOA = B.CNPJ&#xA;WHERE TIPO_DOC IS NULL;&#xA;&#xA;UPDATE A &#xA;&#xA;SET A.TIPO_DOC = 1 &#xA;FROM tb_crdt_classlist_oi_export a with(tablock)&#xA;WHERE TIPO_DOC IS NULL;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\CARREGAR DADOS"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarefa Fluxo de Dados"
+      DTS:DTSID="{B963B375-6644-46EB-87EF-68362DBED978}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CARREGAR DADOS"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\CARREGAR DADOS\BASE INADIM"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Origem de Arquivo Simples;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+              description="Origem de Arquivo Simples"
+              localeId="1046"
+              name="BASE INADIM"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica se colunas de comprimento zero são tratadas como nulas."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome de uma coluna de saída que contém o nome do arquivo. Se nenhum nome for especificado, nenhuma coluna de saída contendo o nome de arquivo será gerada."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\CARREGAR DADOS\BASE INADIM.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Gerenciador de Conexões de Arquivos Simples]"
+                  connectionManagerRefId="Package.ConnectionManagers[Gerenciador de Conexões de Arquivos Simples]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Origem de Arquivo Simples]"
+                  name="Saída de Origem de Arquivo Simples">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Origem de Arquivo Simples].Columns[DS_SISTEMA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[DS_SISTEMA]"
+                      length="50"
+                      lineageId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Origem de Arquivo Simples].Columns[DS_SISTEMA]"
+                      name="DS_SISTEMA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Origem de Arquivo Simples].Columns[CHAVE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[CHAVE]"
+                      length="50"
+                      lineageId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Origem de Arquivo Simples].Columns[CHAVE]"
+                      name="CHAVE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Origem de Arquivo Simples].Columns[NR_FATURAS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[NR_FATURAS]"
+                      length="50"
+                      lineageId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Origem de Arquivo Simples].Columns[NR_FATURAS]"
+                      name="NR_FATURAS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Origem de Arquivo Simples].Columns[DT_VENC_PARTICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[DT_VENC_PARTICAO]"
+                      length="50"
+                      lineageId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Origem de Arquivo Simples].Columns[DT_VENC_PARTICAO]"
+                      name="DT_VENC_PARTICAO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Origem de Arquivo Simples].Columns[ATRASO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[ATRASO]"
+                      length="50"
+                      lineageId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Origem de Arquivo Simples].Columns[ATRASO]"
+                      name="ATRASO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Origem de Arquivo Simples].Columns[VL_FATURADO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[VL_FATURADO]"
+                      length="50"
+                      lineageId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Origem de Arquivo Simples].Columns[VL_FATURADO]"
+                      name="VL_FATURADO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[DS_SISTEMA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DS_SISTEMA" />
+                    <externalMetadataColumn
+                      refId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[CHAVE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CHAVE" />
+                    <externalMetadataColumn
+                      refId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[NR_FATURAS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NR_FATURAS" />
+                    <externalMetadataColumn
+                      refId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[DT_VENC_PARTICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DT_VENC_PARTICAO" />
+                    <externalMetadataColumn
+                      refId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[ATRASO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ATRASO" />
+                    <externalMetadataColumn
+                      refId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[VL_FATURADO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="VL_FATURADO" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Erro de Origem de Arquivo Simples]"
+                  isErrorOut="true"
+                  name="Saída de Erro de Origem de Arquivo Simples">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[Coluna de Saída de Erro de Origem de Arquivo Simples]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Coluna de Saída de Erro de Origem de Arquivo Simples"
+                      lineageId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[Coluna de Saída de Erro de Origem de Arquivo Simples]"
+                      name="Coluna de Saída de Erro de Origem de Arquivo Simples" />
+                    <outputColumn
+                      refId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CARREGAR DADOS\Destino OLE DB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino OLE DB"
+              name="Destino OLE DB"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[dbo].[TB_CRDT_BASE_INADIMPLENCIA_LEGADO_NF_ENTRADA]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\CARREGAR DADOS\Destino OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CONEXAO_BANCO]"
+                  connectionManagerRefId="Package.ConnectionManagers[CONEXAO_BANCO]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\CARREGAR DADOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB]"
+                  errorOrTruncationOperation="Inserir"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de Destino OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\CARREGAR DADOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[DS_SISTEMA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DS_SISTEMA"
+                      externalMetadataColumnId="Package\CARREGAR DADOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DS_SISTEMA]"
+                      lineageId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Origem de Arquivo Simples].Columns[DS_SISTEMA]" />
+                    <inputColumn
+                      refId="Package\CARREGAR DADOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[CHAVE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CHAVE"
+                      externalMetadataColumnId="Package\CARREGAR DADOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[CHAVE]"
+                      lineageId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Origem de Arquivo Simples].Columns[CHAVE]" />
+                    <inputColumn
+                      refId="Package\CARREGAR DADOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[NR_FATURAS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NR_FATURAS"
+                      externalMetadataColumnId="Package\CARREGAR DADOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[NR_FATURAS]"
+                      lineageId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Origem de Arquivo Simples].Columns[NR_FATURAS]" />
+                    <inputColumn
+                      refId="Package\CARREGAR DADOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[DT_VENC_PARTICAO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DT_VENC_PARTICAO"
+                      externalMetadataColumnId="Package\CARREGAR DADOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DT_VENC_PARTICAO]"
+                      lineageId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Origem de Arquivo Simples].Columns[DT_VENC_PARTICAO]" />
+                    <inputColumn
+                      refId="Package\CARREGAR DADOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[ATRASO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ATRASO"
+                      externalMetadataColumnId="Package\CARREGAR DADOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ATRASO]"
+                      lineageId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Origem de Arquivo Simples].Columns[ATRASO]" />
+                    <inputColumn
+                      refId="Package\CARREGAR DADOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[VL_FATURADO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="VL_FATURADO"
+                      externalMetadataColumnId="Package\CARREGAR DADOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[VL_FATURADO]"
+                      lineageId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Origem de Arquivo Simples].Columns[VL_FATURADO]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\CARREGAR DADOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DS_SISTEMA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DS_SISTEMA" />
+                    <externalMetadataColumn
+                      refId="Package\CARREGAR DADOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[CHAVE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CHAVE" />
+                    <externalMetadataColumn
+                      refId="Package\CARREGAR DADOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[NR_FATURAS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NR_FATURAS" />
+                    <externalMetadataColumn
+                      refId="Package\CARREGAR DADOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DT_VENC_PARTICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DT_VENC_PARTICAO" />
+                    <externalMetadataColumn
+                      refId="Package\CARREGAR DADOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ATRASO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ATRASO" />
+                    <externalMetadataColumn
+                      refId="Package\CARREGAR DADOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[VL_FATURADO]"
+                      dataType="r8"
+                      name="VL_FATURADO" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\CARREGAR DADOS\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Destino OLE DB"
+                  synchronousInputId="Package\CARREGAR DADOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARREGAR DADOS\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CARREGAR DADOS\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CARREGAR DADOS\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CARREGAR DADOS\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\CARREGAR DADOS.Paths[Saída de Origem de Arquivo Simples]"
+              endId="Package\CARREGAR DADOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB]"
+              name="Saída de Origem de Arquivo Simples"
+              startId="Package\CARREGAR DADOS\BASE INADIM.Outputs[Saída de Origem de Arquivo Simples]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\CONSOLIDAR BASE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarefa Executar SQL"
+      DTS:DTSID="{a3c6502e-5273-4b89-b9c2-47854b43aad7}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CONSOLIDAR BASE"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{557165E4-FCA5-4F9D-AB80-94F4538469D0}"
+          SQLTask:SqlStatementSource="truncate table [dbo].[TB_CRDT_BASE_INADIMPLENCIA_LEGADO_NF];&#xA;insert into TB_CRDT_BASE_INADIMPLENCIA_LEGADO_NF&#xA;select A.*,&#xA;GETDATE() as DT_INCLUSAO&#xA;from &#xA;(&#xA;&#x9;select * From TB_CRDT_BASE_INADIMPLENCIA_LEGADO_NF_ENTRADA &#xA;&#x9;where VL_FATURADO &gt;= 100&#xA;) a " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\INCLUIR DOCS"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarefa Executar SQL"
+      DTS:DTSID="{e70fecef-b170-42b0-97e9-833e2e18a5ca}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="INCLUIR DOCS"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{557165E4-FCA5-4F9D-AB80-94F4538469D0}"
+          SQLTask:SqlStatementSource="insert into TB_CRDT_CLASSLIST_OI_EXPORT &#xA;(&#xA; NR_PESSOA,&#xA; CD_LETRA,&#xA; CD_OPERACAO,&#xA; DT_INCLUSAO&#xA;)&#xA;&#xA;select &#xA; NUMERO_DOCUMENTO as nr_pessoa,&#xA; 'D' AS CD_LETRA,&#xA; CD_OPERACAO = 'DEBITO_NIO',&#xA; GETDATE() AS DT_INCLUSAO&#xA;from &#xA;( &#xA;select A.*,&#xA;b.NR_PESSOA from&#xA;(&#xA; SELECT &#xA; CHAVE AS NUMERO_DOCUMENTO,&#xA; SUM(VL_FATURADO) AS TOTAL_DEBITO&#xA; FROM [dbo].[TB_CRDT_BASE_INADIMPLENCIA_LEGADO_NF]&#xA; GROUP BY CHAVE&#xA;) a &#xA;left join TB_CRDT_CLASSLIST_OI_EXPORT b  on A.numero_documento = b.NR_PESSOA&#xA;) c where NR_PESSOA is null" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\INCLUIR REGISTROS ALTERACAO INADIM"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarefa Executar SQL"
+      DTS:DTSID="{318a2da0-1157-425f-bf51-02cb81cb0d61}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="INCLUIR REGISTROS ALTERACAO INADIM"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{557165E4-FCA5-4F9D-AB80-94F4538469D0}"
+          SQLTask:SqlStatementSource="delete from TB_CRDT_EVOLUTIVO_INADIM&#xA;where CAST(dt_inclusao As date) = cast(GETDATE() as date);&#xA;&#xA;INSERT INTO [DBO].[TB_CRDT_EVOLUTIVO_INADIM]&#xA;(&#xA;&#x9;QUANTIDADE,&#xA;&#x9;SITUACAO_DOCUMENTO,&#xA;&#x9;STATUS_INADIM,&#xA;&#x9;MAILING_ATUAL,&#xA;&#x9;MAILING_ANTERIOR,&#xA;&#x9;TIPO_DOCUMENTO,&#xA;&#x9;DT_INCLUSAO&#xA;)&#xA;SELECT D.*,&#xA;cast(GETDATE() as date) AS DT_INCLUSAO&#xA;FROM &#xA;( &#xA;select COUNT(1) as QUANTIDADE,&#xA;SITUACAO_DOCUMENTO,&#xA;STATUS_INADIM,&#xA;MAILING_ATUAL,&#xA;MAILING_ANTERIOR,&#xA;TIPO_DOC&#xA;from &#xA;(&#xA;&#x9;select *, &#xA;&#x9;CASE WHEN b.CD_LETRA = 'D' THEN 'MANTEVE NEGADO'&#xA;&#x9;WHEN b.CD_LETRA IN ('K','R','S','W') THEN  'MIGROU PARA NEGADO'&#xA;&#x9;else 'MANTEVE NEGADO'&#xA;&#x9;END AS SITUACAO_DOCUMENTO,&#xA;&#x9;CASE WHEN CD_LETRA NOT In ('D','L') THEN 'ENTRANTE'&#xA;&#x9;WHEN CD_LETRA In ('D','L') THEN 'MANTEVE'&#xA;&#x9;END AS STATUS_INADIM,&#xA;&#x9;B.CD_LETRA AS MAILING_ATUAL,&#xA;&#x9;'D' AS  MAILING_ANTERIOR,&#xA;&#x9;TIPO_DOC AS TIPO_DOCUMENTO&#xA;&#x9;FROM &#xA;&#x9;( &#xA;&#x9;&#x9;select * from&#xA;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;select &#xA;&#x9;&#x9;&#x9;CHAVE as numero_documento,&#xA;&#x9;&#x9;&#x9;sum(VL_FATURADO) as total &#xA;&#x9;&#x9;&#x9;from TB_CRDT_BASE_INADIMPLENCIA_LEGADO_NF_ENTRADA a &#xA;&#x9;&#x9;&#x9;where ATRASO &gt; 30&#xA;&#x9;&#x9;&#x9;group by CHAVE&#xA;&#x9;&#x9;) a where total &gt; 100&#xA;&#x9;) A  inner join tb_crdt_classlist_oi_export b on A.numero_documento = b.nr_pessoa&#xA;) b &#xA;&#xA;group by STATUS_INADIM,MAILING_ATUAL,MAILING_ANTERIOR,SITUACAO_DOCUMENTO,TIPO_DOC&#xA;&#xA;UNION ALL &#xA;---- novos clientes&#xA;&#xA;select COUNT(1) as qtd,&#xA;&#x9;&#x9;'MIGROU PARA NEGADO' AS SITUACAO_DOCUMENTO,&#xA;&#x9;   'ENTRANTE' AS STATUS_INADIM,&#xA;&#x9;   'D' AS MAILING_ATUAL,&#xA;&#x9;   '' AS MAILING_ANTERIOR,&#xA;&#x9;   TIPO_DOC AS TIPO_DOCUMENTO&#xA;from &#xA;(&#xA;&#x9;&#x9;select C.*,&#xA;&#x9;case when d.SCORE_PJ_CUSTOMIZADO IS null then 2 else 1 end as TIPO_DOC&#xA;&#x9;&#xA;&#x9;from&#xA;&#x9;(&#xA;&#x9;&#xA;&#x9;&#x9;select a.*,&#xA;&#x9;&#x9;b.NR_PESSOA&#xA;&#x9;&#xA;&#x9;&#x9;FROM &#xA;&#x9;&#x9;&#x9;( &#xA;&#x9;&#x9;&#x9;select * from&#xA;&#x9;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;select &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;CHAVE as numero_documento,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;sum(VL_FATURADO) as total &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;from TB_CRDT_BASE_INADIMPLENCIA_LEGADO_NF_ENTRADA a &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;where ATRASO &gt; 30&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;group by CHAVE&#xA;&#x9;&#x9;&#x9;&#x9;) a where total &gt; 100&#xA;&#xA;&#x9;&#x9;&#x9;) A  left join tb_crdt_classlist_oi_export b on A.numero_documento = b.nr_pessoa&#xA;&#x9;) C &#xA;&#x9;&#xA;&#x9;left join TB_CRDT_BASE_QUOD_FULL_PJ d on C.numero_documento = d.CNPJ&#xA;&#x9;&#xA;)  b  where NR_PESSOA is null&#xA;GROUP BY TIPO_DOC&#xA;) D;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\LIMPAR BASE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarefa Executar SQL"
+      DTS:DTSID="{8E402632-4583-45DB-A43B-4A1E2773BC38}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="LIMPAR BASE"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{557165E4-FCA5-4F9D-AB80-94F4538469D0}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE TB_CRDT_BASE_INADIMPLENCIA_LEGADO_NF_ENTRADA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\RECOMPRA"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarefa Executar SQL"
+      DTS:DTSID="{33989974-21b2-4e7d-850a-4b0abb2b968d}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="RECOMPRA"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{557165E4-FCA5-4F9D-AB80-94F4538469D0}"
+          SQLTask:SqlStatementSource="UPDATE A&#xA;&#xA;SET A.CD_LETRA = D.CD_LETRA,&#xA;A.CD_OPERACAO = 'MAILING_PJ',&#xA;A.DT_INCLUSAO = GETDATE()&#xA;&#xA;FROM TB_CRDT_CLASSLIST_OI_EXPORT A&#xA;&#xA;INNER JOIN &#xA;(&#xA;&#xA; SELECT NR_PESSOA,&#xA; SCORE,&#xA; CASE WHEN ID_SITUACAO_CADASTRAL &lt;&gt; 'A' THEN 'L'&#xA;  ELSE &#xA;  CASE WHEN SCORE IS NULL THEN 'Q'&#xA;  WHEN SCORE &lt; 400 THEN 'Q'&#xA;  WHEN SCORE BETWEEN  400 AND 624 THEN 'K'&#xA;  WHEN SCORE   &gt;=  625 THEN 'R'&#xA;  END &#xA; END AS CD_LETRA&#xA;&#xA;&#xA; FROM &#xA; (&#xA;  SELECT A.*,&#xA;  B.SCORE &#xA;&#xA;  FROM &#xA;  (&#xA;   select NR_PESSOA,&#xA;   ID_SITUACAO_CADASTRAL,&#xA;   RIGHT('00000000000000' + DOCUMENTO,14) AS DOCUMENTO&#xA;   from &#xA;   (&#xA;    SELECT  a.*,&#xA;    b.MEI,&#xA;    b.ID_SITUACAO_CADASTRAL,&#xA;    b.SCORE_PJ_CUSTOMIZADO,&#xA;    ID_NATUREZA_JURIDICA&#xA;    FROM TB_CRDT_CLASSLIST_OI_EXPORT a &#xA;    inner join TB_CRDT_BASE_QUOD_FULL_PJ b on a.NR_PESSOA = b.CNPJ&#xA;&#xA;    WHERE CD_LETRA IS NULL and TIPO_DOC = '2'&#xA;   ) a&#xA;   INNER JOIN TB_CRDT_QUOD_BASE_QUADRO_SOCIETARIO B ON a.NR_PESSOA = B.CNPJ&#xA; &#xA;   where MEI = 'S'&#xA;  ) A &#xA;  INNER JOIN TB_CRDT_BASE_EQUIFAX B ON A.DOCUMENTO = B.cpf&#xA; ) C&#xA;) D&#xA;&#xA;ON A.NR_PESSOA = D.NR_PESSOA" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\REORGANIZAR ÍNDICE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarefa Executar SQL"
+      DTS:DTSID="{d6038a7f-0645-452b-8a68-9c5ad1455cef}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="REORGANIZAR ÍNDICE"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{557165E4-FCA5-4F9D-AB80-94F4538469D0}"
+          SQLTask:SqlStatementSource="alter index idx_doc on tb_crdt_classlist_oi_export rebuild partition = all&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição]"
+      DTS:CreationName=""
+      DTS:DTSID="{8F324263-928E-4366-86E0-22AAAAFAC8AB}"
+      DTS:From="Package\LIMPAR BASE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição"
+      DTS:To="Package\CARREGAR DADOS" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{6B991BE7-A3E1-46F5-A741-4D3C03AA5E7D}"
+      DTS:From="Package\CARREGAR DADOS"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição 1"
+      DTS:To="Package\ALTERAR TIPO DE DADOS" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição 10]"
+      DTS:CreationName=""
+      DTS:DTSID="{3DCE34FC-0344-484F-A000-986B7BABACB8}"
+      DTS:From="Package\CONSOLIDAR BASE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição 10"
+      DTS:To="Package\ATUALIZAR CLASS CODE ANTIGO" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{2E0330BF-C9D5-45F3-AF3A-4ED251604DCA}"
+      DTS:From="Package\ALTERAR TIPO DE DADOS"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição 2"
+      DTS:To="Package\INCLUIR REGISTROS ALTERACAO INADIM" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição 2 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{e236dd8f-cf7a-4a8b-b94d-1e532871b245}"
+      DTS:From="Package\ATUALIZAR CLASS CODE ANTIGO"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição 2 1"
+      DTS:To="Package\ATUALIZAR MAILING D" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{5A4013C1-34BC-498E-8709-5D09153C3434}"
+      DTS:From="Package\INCLUIR REGISTROS ALTERACAO INADIM"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição 3"
+      DTS:To="Package\CONSOLIDAR BASE" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição 3 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{36e20267-12c9-46fd-aa49-b8137fb3406d}"
+      DTS:From="Package\ATUALIZAR MAILING D"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição 3 1"
+      DTS:To="Package\INCLUIR DOCS" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{a88a3cac-dc02-44e7-b66f-c84644ca63b1}"
+      DTS:From="Package\INCLUIR DOCS"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição 4"
+      DTS:To="Package\ATUALIZAR TIPO DOCUMENTO" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{d5d3f7c2-776e-4344-8c57-4c1c4885fe13}"
+      DTS:From="Package\ATUALIZAR TIPO DOCUMENTO"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição 5"
+      DTS:To="Package\ATUALIZAR NAO MEI" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{9a124d15-32eb-496b-9119-229f9d113bad}"
+      DTS:From="Package\ATUALIZAR NAO MEI"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição 6"
+      DTS:To="Package\ATUALIZAR MEI" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{5339ffb3-3266-446e-a20a-9bd0bc6fdf97}"
+      DTS:From="Package\ATUALIZAR MEI"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição 7"
+      DTS:To="Package\RECOMPRA" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição 8]"
+      DTS:CreationName=""
+      DTS:DTSID="{F66D749D-5085-4E78-B5B6-481D64CEA7E4}"
+      DTS:From="Package\RECOMPRA"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição 8"
+      DTS:To="Package\APAGAR DOCS NULOS" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição 9]"
+      DTS:CreationName=""
+      DTS:DTSID="{727F6B2B-A898-4C4F-B5AA-C75E9734EB35}"
+      DTS:From="Package\APAGAR DOCS NULOS"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição 9"
+      DTS:To="Package\REORGANIZAR ÍNDICE" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
+<!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
+<!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
+<Objects
+  Version="8">
+  <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="214.666666666667,42.6666666666667"
+          Id="Package\ALTERAR TIPO DE DADOS"
+          TopLeft="96.2499956972899,188.877192035882" />
+        <NodeLayout
+          Size="197.333333333334,42.6666666666667"
+          Id="Package\APAGAR DOCS NULOS"
+          TopLeft="756.874966165052,404.508771997437" />
+        <NodeLayout
+          Size="163.333333333334,68.6666666666667"
+          Id="Package\ATUALIZAR CLASS CODE ANTIGO"
+          TopLeft="458.124979520217,289.421049453793" />
+        <NodeLayout
+          Size="196,42.6666666666667"
+          Id="Package\ATUALIZAR MAILING D"
+          TopLeft="468.749979045243,173.824560622209" />
+        <NodeLayout
+          Size="160,42.6666666666667"
+          Id="Package\ATUALIZAR MEI"
+          TopLeft="708.749968316407,239.578948119671" />
+        <NodeLayout
+          Size="186.666666666667,42.6666666666667"
+          Id="Package\ATUALIZAR NAO MEI"
+          TopLeft="685.624969350175,165.000001570112" />
+        <NodeLayout
+          Size="163.333333333334,59.3333333333334"
+          Id="Package\ATUALIZAR TIPO DOCUMENTO"
+          TopLeft="674.99996982515,18.5789505462073" />
+        <NodeLayout
+          Size="181.333333333334,42.6666666666667"
+          Id="Package\CARREGAR DADOS"
+          TopLeft="103.749995362014,86.2105253692149" />
+        <NodeLayout
+          Size="181.333333333334,42.6666666666667"
+          Id="Package\CONSOLIDAR BASE"
+          TopLeft="353.124984214083,452.403508313668" />
+        <NodeLayout
+          Size="156,42.6666666666667"
+          Id="Package\INCLUIR DOCS"
+          TopLeft="491.249978039414,29.491230000887" />
+        <NodeLayout
+          Size="296,42.6666666666667"
+          Id="Package\INCLUIR REGISTROS ALTERACAO INADIM"
+          TopLeft="72.4999967589976,284.701753514515" />
+        <NodeLayout
+          Size="186.666666666667,42"
+          Id="Package\LIMPAR BASE"
+          TopLeft="96.2499956972899,8.21052622563951" />
+        <NodeLayout
+          Size="141.333333333334,42.6666666666667"
+          Id="Package\RECOMPRA"
+          TopLeft="848.708295810348,319.631578819656" />
+        <NodeLayout
+          Size="196.666666666667,42.6666666666667"
+          Id="Package\REORGANIZAR ÍNDICE"
+          TopLeft="669.999970048667,471.526313993987" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição]"
+          TopLeft="191.999995529652,50.2105262256395">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.9999991435754"
+              Start="0,0"
+              End="0,28.4999991435754">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.4999991435754" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição 1]"
+          TopLeft="194.416662028681,128.877192035882">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9.16666700194259,60"
+              Start="0,0"
+              End="9.16666700194259,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="4,30" />
+                  <mssgle:LineSegment
+                    End="5.16666700194259,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5.16666700194259,30"
+                    Point2="9.16666700194259,30"
+                    Point3="9.16666700194259,34" />
+                  <mssgle:LineSegment
+                    End="9.16666700194259,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição 10]"
+          TopLeft="472.680539769639,452.403508313668">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="67.1111064172451,-94.3157921932083"
+              Start="0,0"
+              End="67.1111064172451,-86.8157921932083">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-34.2212685564314" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-34.2212685564314"
+                    Point2="0,-38.2212685564314"
+                    Point3="4,-38.2212685564314" />
+                  <mssgle:LineSegment
+                    End="63.1111064172451,-38.2212685564314" />
+                  <mssgle:CubicBezierSegment
+                    Point1="63.1111064172451,-38.2212685564314"
+                    Point2="67.1111064172451,-38.2212685564314"
+                    Point3="67.1111064172451,-42.2212685564314" />
+                  <mssgle:LineSegment
+                    End="67.1111064172451,-86.8157921932083" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição 2]"
+          TopLeft="203.583329030623,231.543858702548">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="16.9166677283744,53.157894811967"
+              Start="0,0"
+              End="16.9166677283744,45.657894811967">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5789474059835" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.5789474059835"
+                    Point2="0,26.5789474059835"
+                    Point3="4,26.5789474059835" />
+                  <mssgle:LineSegment
+                    End="12.9166677283744,26.5789474059835" />
+                  <mssgle:CubicBezierSegment
+                    Point1="12.9166677283744,26.5789474059835"
+                    Point2="16.9166677283744,26.5789474059835"
+                    Point3="16.9166677283744,30.5789474059835" />
+                  <mssgle:LineSegment
+                    End="16.9166677283744,45.657894811967" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição 2 1]"
+          TopLeft="539.791646186884,289.421049453793">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="26.958332858359,-72.9298221649179"
+              Start="0,0"
+              End="26.958332858359,-65.4298221649179">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-32.4649110824589" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-32.4649110824589"
+                    Point2="0,-36.4649110824589"
+                    Point3="4,-36.4649110824589" />
+                  <mssgle:LineSegment
+                    End="22.958332858359,-36.4649110824589" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.958332858359,-36.4649110824589"
+                    Point2="26.958332858359,-36.4649110824589"
+                    Point3="26.958332858359,-40.4649110824589" />
+                  <mssgle:LineSegment
+                    End="26.958332858359,-65.4298221649179" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição 3]"
+          TopLeft="220.499996758998,327.368420181182">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="194.402765232863,125.035088132486"
+              Start="0,0"
+              End="194.402765232863,117.535088132486">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,70.3648920671347" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,70.3648920671347"
+                    Point2="0,74.3648920671347"
+                    Point3="4,74.3648920671347" />
+                  <mssgle:LineSegment
+                    End="190.402765232863,74.3648920671347" />
+                  <mssgle:CubicBezierSegment
+                    Point1="190.402765232863,74.3648920671347"
+                    Point2="194.402765232863,74.3648920671347"
+                    Point3="194.402765232863,78.3648920671347" />
+                  <mssgle:LineSegment
+                    End="194.402765232863,117.535088132486" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição 3 1]"
+          TopLeft="567.999978542328,173.824560622209">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-101.666663954655"
+              Start="0,0"
+              End="0,-94.166663954655">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-94.166663954655" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição 4]"
+          TopLeft="647.249978039414,49.5350902735471">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="27.749991785736,0"
+              Start="0,0"
+              End="20.249991785736,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="20.249991785736,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição 5]"
+          TopLeft="780.756914032107,77.9122838795407">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,87.0877176905711"
+              Start="0,0"
+              End="0,79.5877176905711">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,79.5877176905711" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição 6]"
+          TopLeft="808.736080461286,207.666668236778">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-19.9861121448795,31.9122798828922"
+              Start="0,0"
+              End="-19.9861121448795,24.4122798828922">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.92763745964189" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.92763745964189"
+                    Point2="0,12.9276374596419"
+                    Point3="-4,12.9276374596419" />
+                  <mssgle:LineSegment
+                    End="-15.9861121448795,12.9276374596419" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-15.9861121448795,12.9276374596419"
+                    Point2="-19.9861121448795,12.9276374596419"
+                    Point3="-19.9861121448795,16.9276374596419" />
+                  <mssgle:LineSegment
+                    End="-19.9861121448795,24.4122798828922" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição 7]"
+          TopLeft="814.08330164974,282.245614786337">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="105.291660827275,37.3859640333187"
+              Start="0,0"
+              End="105.291660827275,29.8859640333187">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.176480449169" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.176480449169"
+                    Point2="0,15.176480449169"
+                    Point3="4,15.176480449169" />
+                  <mssgle:LineSegment
+                    End="101.291660827275,15.176480449169" />
+                  <mssgle:CubicBezierSegment
+                    Point1="101.291660827275,15.176480449169"
+                    Point2="105.291660827275,15.176480449169"
+                    Point3="105.291660827275,19.176480449169" />
+                  <mssgle:LineSegment
+                    End="105.291660827275,29.8859640333187" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição 8]"
+          TopLeft="919.374962477015,362.298245486323">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-63.8333296452963,42.2105265111143"
+              Start="0,0"
+              End="-63.8333296452963,34.7105265111143">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.1052632555572" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.1052632555572"
+                    Point2="0,21.1052632555572"
+                    Point3="-4,21.1052632555572" />
+                  <mssgle:LineSegment
+                    End="-59.8333296452963,21.1052632555572" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-59.8333296452963,21.1052632555572"
+                    Point2="-63.8333296452963,21.1052632555572"
+                    Point3="-63.8333296452963,25.1052632555572" />
+                  <mssgle:LineSegment
+                    End="-63.8333296452963,34.7105265111143" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição 9]"
+          TopLeft="855.541632831719,447.175438664104">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-87.2083294497186,24.3508753298833"
+              Start="0,0"
+              End="-87.2083294497186,16.8508753298833">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.17543766494163" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.17543766494163"
+                    Point2="0,12.1754376649416"
+                    Point3="-4,12.1754376649416" />
+                  <mssgle:LineSegment
+                    End="-83.2083294497186,12.1754376649416" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-83.2083294497186,12.1754376649416"
+                    Point2="-87.2083294497186,12.1754376649416"
+                    Point3="-87.2083294497186,16.1754376649416" />
+                  <mssgle:LineSegment
+                    End="-87.2083294497186,16.8508753298833" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\CARREGAR DADOS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="148,42.6666666666667"
+          Id="Package\CARREGAR DADOS\BASE INADIM"
+          TopLeft="40.624998183921,10.9473683008527" />
+        <NodeLayout
+          Size="148,42.6666666666667"
+          Id="Package\CARREGAR DADOS\Destino OLE DB"
+          TopLeft="39.9999982118607,93.0526305572479" />
+        <EdgeLayout
+          Id="Package\CARREGAR DADOS.Paths[Saída de Origem de Arquivo Simples]"
+          TopLeft="114.312498197891,53.6140349675193">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.4385955897285"
+              Start="0,0"
+              End="0,31.9385955897285">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.9385955897285" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARREGAR DADOS\Destino OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
