@@ -1,0 +1,24 @@
+# Visual Studio and SSDT
+.vs/
+*.user
+*.suo
+*.dtproj.user
+bin/
+obj/
+
+# SSIS configuration and sensitive local files
+*.dtsConfig
+*.conmgr
+*.params
+.env
+
+# Data and logs
+*.csv
+*.txt
+*.xlsx
+*.log
+*.bak
+
+# OS
+.DS_Store
+Thumbs.db
